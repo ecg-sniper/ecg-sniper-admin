@@ -1,8 +1,15 @@
 require('dotenv').config();
 const debug = require('debug')('{name}:server');
-const http = require('http');
+const https = require('https');
 const chalk = require('chalk');
 const app = require('./app');
+const fs = require('fs');
+
+const httpsOptions = { 
+  cert: fs.readFileSync('./ecg-sniper_com.crt'), 
+  ca: fs.readFileSync('./ecg-sniper_com.ca-bundle'), 
+  key: fs.readFileSync('./ecg-sniper_com.key') 
+}; 
 
 function normalizePort(val) {
   const port = parseInt(val, 10);
@@ -16,7 +23,7 @@ function normalizePort(val) {
 const port = normalizePort(process.env.PORT || process.env.APPLICATION_PORT || '3310');
 app.set('port', port);
 
-const server = http.createServer(app);
+const server = https.createServer(httpsOptions, app);
 server.listen(port);
 
 function onError(error) {
