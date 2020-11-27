@@ -24,7 +24,7 @@ const port = normalizePort(process.env.PORT || process.env.APPLICATION_PORT || '
 app.set('port', port);
 
 const server = https.createServer(httpsOptions, app);
-server.listen(port);
+server.listen(443, '0.0.0.0');
 
 function onError(error) {
   if (error.syscall !== 'listen') {
