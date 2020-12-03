@@ -13,6 +13,7 @@ const schema = mongoose.Schema({
   'subject': String,
   'updatedAt': Date,
   'uploaded_by': { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
+  'active': Boolean,
 }, {
   timestamps: false,
 });

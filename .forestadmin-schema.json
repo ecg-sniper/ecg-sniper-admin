@@ -1000,6 +1000,21 @@
       "reference": "users._id",
       "inverseOf": null,
       "validations": []
+    }, {
+      "field": "active",
+      "type": "Boolean",
+      "defaultValue": false,
+      "enums": null,
+      "integration": null,
+      "isFilterable": true,
+      "isPrimaryKey": false,
+      "isReadOnly": false,
+      "isRequired": false,
+      "isSortable": true,
+      "isVirtual": false,
+      "reference": null,
+      "inverseOf": null,
+      "validations": []
     }],
     "segments": [],
     "actions": []

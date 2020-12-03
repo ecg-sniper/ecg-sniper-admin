@@ -22,6 +22,7 @@ const schema = mongoose.Schema({
   'register_step': Number,
   'updatedAt': Date,
   'username': String,
+  'country': String,
 }, {
   timestamps: false,
 });
