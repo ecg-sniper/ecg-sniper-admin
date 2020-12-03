@@ -1001,7 +1001,7 @@
       "inverseOf": null,
       "validations": []
     }, {
-      "field": "active",
+      "field": "is_active",
       "type": "Boolean",
       "defaultValue": false,
       "enums": null,
